@@ -9,7 +9,7 @@ const Photos = () => {
   const imageListRef = ref(storage, "images/");
   const getData = () => {
     listAll(imageListRef).then((response) => {
-      const splitArray = response.items.slice(-3);
+      const splitArray = response.items.slice(-1);
       splitArray.forEach((item) => {
         getDownloadURL(item).then((url) => {
           setImageList((prev) => [...prev, url]);
