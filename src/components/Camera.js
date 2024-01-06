@@ -77,7 +77,7 @@ const Camera = ({ buttonRef }) => {
         audio={false}
         screenshotFormat="image/png"
        // videoConstraints={videoConstraints}
-        mirrored={true}
+        mirrored={false}
         screenshotQuality={1}
       />
     </>
