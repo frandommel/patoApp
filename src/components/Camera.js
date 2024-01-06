@@ -8,11 +8,11 @@ import AudioPatoDefinitivo  from "../assets/AudioPatoDefinitivo.mp3";
 import soundExito from "../assets/fotoConExito.mp3";
 import camera from "../assets/camera.mp3"
 
-const videoConstraints = {
+/*const videoConstraints = {
   width: 750,
   height: 1334,
   facingMode: "enviroment",
-};
+};*/
 
 const Camera = ({ buttonRef }) => {
   const webRef = useRef(null);
@@ -59,10 +59,13 @@ const Camera = ({ buttonRef }) => {
       },18000);
       setTimeout(() =>{
         uploadImage(img)
-        setIsButtonDisable(false)
       }, 25000);
       
       setTimeout(() => new Audio(soundExito).play(), 19000);
+
+      setTimeout(() =>{
+        setIsButtonDisable(false)
+      }, 37000);
     },
     [webRef]
   );
@@ -73,7 +76,7 @@ const Camera = ({ buttonRef }) => {
         ref={webRef}
         audio={false}
         screenshotFormat="image/png"
-        videoConstraints={videoConstraints}
+       // videoConstraints={videoConstraints}
         mirrored={true}
         screenshotQuality={1}
       />
